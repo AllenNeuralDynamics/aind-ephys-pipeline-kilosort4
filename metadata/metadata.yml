@@ -1,2 +1,17 @@
 metadata_version: 1
-name: (aind-pipeline-template)
+name: aind-ephys-pipeline-kilosort4
+description: |-
+  Electrophysiology analysis pipeline using Kilosort4 via SpikeInterface.
+
+  The pipeline includes:
+
+  - preprocessing: phase_shift, highpass filter, denoising (bad channel removal + common median reference ("cmr") or highpass spatial filter - "destripe"), and motion estimation (optionally correction)
+  - spike sorting: with Kilosort4
+  - postprocessing: remove duplicate units, compute amplitudes, spike/unit locations, PCA, correlograms, template similarity, template metrics, and quality metrics
+  - curation: based on ISI violation ratio, presence ratio, and amplitude cutoff
+  - unit classification based on pre-trained classifier (noise, MUA, SUA)
+  - visualization: timeseries, drift maps, and sorting output in sortingview
+  - export session, subject, and units data to NWB
+authors:
+- name: AIND
+- name: Alessio Buccino
